@@ -18,6 +18,23 @@ kubeClusterName: ""
 # Version of teleport image, if different from chart version in Chart.yaml.
 teleportVersionOverride: ""
 
+ingress:
+  enabled: false
+  # Used to create Ingress record (should used with service.type: ClusterIP).
+  hosts:
+    - ""
+  # - teleport.domain.com
+  # The ingress path. Useful to host teleport on a subpath, such as `/teleport`.
+  path: /
+  labels:
+
+# If you want to use your own certicate you can set it with these values:
+custom_tls:
+  generate_secret: false
+  enabled: false
+  crt: ""
+  key: ""
+
 authentication:
   # Default authentication type. Possible values are 'local' and 'github' for OSS, plus 'oidc' and 'saml' for Enterprise.
   type: local
