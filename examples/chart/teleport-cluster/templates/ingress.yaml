@@ -36,7 +36,6 @@ spec:
                 port:
                   name: "https"
                   number: 443
-          {{- if not .Values.proxyListenerMode }}
           - path: {{ $IngressPath }}
             pathType: Prefix
             backend:
