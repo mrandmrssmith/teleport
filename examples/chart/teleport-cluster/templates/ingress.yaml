@@ -34,32 +34,60 @@ spec:
               service:
                 name: {{ $ServiceName }}
                 port:
-                  number: {{ $httpsServicePort  }}
+                  name: "https"
+                  number: 443
+          {{- if not .Values.proxyListenerMode }}
           - path: {{ $IngressPath }}
             pathType: Prefix
             backend:
               service:
                 name: {{ $ServiceName }}
                 port:
-                  number: {{ $sshproxyServicePort  }}
+                  name: "sshproxy"
+                  number: 3023
           - path: {{ $IngressPath }}
             pathType: Prefix
             backend:
               service:
                 name: {{ $ServiceName }}
                 port:
-                  number: {{ $k8sServicePort  }}
+                  name: "k8s"
+                  number: 3026
           - path: {{ $IngressPath }}
             pathType: Prefix
             backend:
               service:
                 name: {{ $ServiceName }}
                 port:
-                  number: {{ $sshtunServicePort  }}
+                  name: sshtun
+                  number: 3024
+          - path: {{ $IngressPath }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $ServiceName }}
+                port:
+                  name: mysql
+                  number: 3036
+          - path: {{ $IngressPath }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $ServiceName }}
+                port:
+                  name: postgres
+                  number: 5432
+          - path: {{ $IngressPath }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $ServiceName }}
+                port:
+                  name: mongo
+                  number: 27017
+          {{- end -}}
     {{- end -}}
   {{- if .Values.ingress.tls }}
   tls:
 {{ toYaml .Values.ingress.tls | indent 4 }}
   {{- end -}}
-{{- end -}}
-
