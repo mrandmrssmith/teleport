@@ -27,6 +27,11 @@ ingress:
   # The ingress path. Useful to host teleport on a subpath, such as `/teleport`.
   path: /
   labels:
+  tls:
+    - secretName: chart-example-tls
+      hosts:
+          - chart-example.local
+
 
 # If you want to use your own certicate you can set it with these values:
 custom_tls:
