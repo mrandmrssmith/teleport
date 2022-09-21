@@ -2,6 +2,23 @@ apiVersion: v1
 entries:
   teleport-cluster:
   - apiVersion: v2
+    appVersion: 11.1.2-dev
+    created: "2022-09-21T16:10:58.64967974Z"
+    dependencies:
+    - condition: installCRDs,operator.enabled
+      name: teleport-operator
+      repository: ""
+      version: 11.1.2-dev
+    description: Teleport is a unified access plane for your infrastructure
+    digest: 660e3781a8ff5d493128c1944af020d67ee3fd65a88c9fc0d8ae626a79a2512a
+    icon: https://goteleport.com/images/logos/logo-teleport-square.svg
+    keywords:
+    - Teleport
+    name: teleport-cluster
+    urls:
+    - https://github.com/mrandmrssmith/teleport/releases/download/teleport-cluster-11.1.2-dev/teleport-cluster-11.1.2-dev.tgz
+    version: 11.1.2-dev
+  - apiVersion: v2
     appVersion: 11.1.1-dev
     created: "2022-09-21T16:05:21.346152807Z"
     dependencies:
@@ -222,4 +239,4 @@ entries:
     urls:
     - https://github.com/mrandmrssmith/teleport/releases/download/teleport-cluster-11.0.2-dev/teleport-cluster-11.0.2-dev.tgz
     version: 11.0.2-dev
-generated: "2022-09-21T16:05:21.34624301Z"
+generated: "2022-09-21T16:10:58.649900043Z"
