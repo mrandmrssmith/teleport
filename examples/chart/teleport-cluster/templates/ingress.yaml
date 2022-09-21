@@ -84,8 +84,4 @@ spec:
                 port:
                   name: mongo
                   number: 27017
-  {{- if .Values.ingress.tls }}
-  tls:
-{{ toYaml .Values.ingress.tls | indent 4 }}
-  {{- end -}}
 {{- end -}}
