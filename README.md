@@ -21,7 +21,7 @@
 
 > Read our Documentation: https://goteleport.com/docs/getting-started/
 
-## Table of Contents
+## Table of Contents 
 
 1. [Introduction](#introduction)
 1. [Installing and Running](#installing-and-running)
