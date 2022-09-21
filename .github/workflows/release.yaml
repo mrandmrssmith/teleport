@@ -33,5 +33,5 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.TOKEN }}"
           CR_SKIP_EXISTING: false
-          CR_INDEX-PATH: "docs/index.yaml"
-          CR_PAGES-INDEX-PATH: "docs/index.yaml"
+          CR_INDEX_PATH: "docs/index.yaml"
+          CR_PAGES_INDEX_PATH: "docs/index.yaml"
