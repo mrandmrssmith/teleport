@@ -20,9 +20,9 @@ metadata:
     {{ $key }}: {{ $value | quote }}
   {{- end }}
   annotations:
-  {{- range $key, $value := .Values.ingress.annotations }}
-    {{ $key }}: {{ $value | quote }}
-  {{- end }}
+    {{- range $key, $value := .Values.ingress.annotations }}
+      {{ $key }}: {{ $value | quote }}
+    {{- end }}
 spec:
   rules:
     - host: {{ .Values.ingress.hosts }}
