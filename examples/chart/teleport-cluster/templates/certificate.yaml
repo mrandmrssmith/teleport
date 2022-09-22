@@ -24,7 +24,7 @@ spec:
   {{- end }}
 {{- end }}
 
-{{- if .Values.custom_tls.generate_secret }}
+{{- if  .Values.custom_tls.generate_secret }}
 apiVersion: v1
 kind: Secret
 metadata:
@@ -34,9 +34,7 @@ type: kubernetes.io/tls
 data:
   tls.crt: {{ .Values.custom_tls.crt }}
   tls.key: {{ .Values.custom_tls.key }}
-{{- end }}
 
-{{- if  .Values.custom_tls.generate_secret }}
 apiVersion: v1
 kind: Secret
 metadata:
