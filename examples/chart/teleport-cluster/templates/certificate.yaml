@@ -24,7 +24,7 @@ spec:
   {{- end }}
 {{- end }}
 
-{{- if or .Values.custom_tls.enabled .Values.custom_tls.generate_secret }}
+{{- if .Values.custom_tls.generate_secret }}
 apiVersion: v1
 kind: Secret
 metadata:
@@ -36,7 +36,7 @@ data:
   tls.key: {{ .Values.custom_tls.key }}
 {{- end }}
 
-{{- if or .Values.custom_tls.enabled .Values.custom_tls.generate_secret }}
+{{- if  .Values.custom_tls.generate_secret }}
 apiVersion: v1
 kind: Secret
 metadata:
