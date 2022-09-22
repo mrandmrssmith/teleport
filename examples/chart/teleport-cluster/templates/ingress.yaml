@@ -36,6 +36,7 @@ spec:
                 port:
                   name: "https"
                   number: 443
+          {{- if not .Values.proxyListenerMode }}
           - path: {{ $IngressPath }}
             pathType: Prefix
             backend:
@@ -84,4 +85,9 @@ spec:
                 port:
                   name: mongo
                   number: 27017
+          {{- end -}}
+
+# {{- if .Values.ingress.tls }}
+  # tls: {{ toYaml .Values.ingress.tls | indent 4 }}
+  # {{- end -}}
 {{- end -}}
