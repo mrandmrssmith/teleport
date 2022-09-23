@@ -23,24 +23,3 @@ spec:
     annotations: {{- toYaml . | nindent 6 }}
   {{- end }}
 {{- end }}
-
-{{- if  .Values.custom_tls.generate_secret }}
-apiVersion: v1
-kind: Secret
-metadata:
-  name: teleport-tls
-  namespace: {{ .Release.Namespace }}
-type: kubernetes.io/tls
-data:
-  tls.crt: {{ .Values.custom_tls.crt }}
-  tls.key: {{ .Values.custom_tls.key }}
-
-apiVersion: v1
-kind: Secret
-metadata:
-  name: teleport-tls-ca
-  namespace: {{ .Release.Namespace }}
-type: Opaque
-data:
-  ca.pem: {{ .Values.custom_tls.crt }}
-{{- end }}
