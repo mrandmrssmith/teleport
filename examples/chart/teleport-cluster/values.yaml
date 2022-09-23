@@ -34,9 +34,10 @@ ingress:
 
 
 # If you want to use your own certicate you can set it with these values:
-custom_tls:
-  generate_secret: false
-  enabled: false
+customTLS:
+  generateSecret: false
+  name: ""
+  nameCA: ""
   crt: ""
   key: ""
 
