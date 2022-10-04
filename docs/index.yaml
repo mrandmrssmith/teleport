@@ -2,6 +2,23 @@ apiVersion: v1
 entries:
   teleport-cluster:
   - apiVersion: v2
+    appVersion: 12.1.1-dev
+    created: "2022-10-04T10:05:05.353877603Z"
+    dependencies:
+    - condition: installCRDs,operator.enabled
+      name: teleport-operator
+      repository: ""
+      version: 12.1.1-dev
+    description: Teleport is a unified access plane for your infrastructure
+    digest: 50f1efdec8f98037717fa0dbf3aa2228353e7107d20534a67a2a82d6f39792cf
+    icon: https://goteleport.com/images/logos/logo-teleport-square.svg
+    keywords:
+    - Teleport
+    name: teleport-cluster
+    urls:
+    - https://github.com/mrandmrssmith/teleport/releases/download/teleport-cluster-12.1.1-dev/teleport-cluster-12.1.1-dev.tgz
+    version: 12.1.1-dev
+  - apiVersion: v2
     appVersion: 12.1.0-dev
     created: "2022-10-03T11:50:45.250530814Z"
     dependencies:
@@ -445,6 +462,19 @@ entries:
     version: 11.0.2-dev
   teleport-kube-agent:
   - apiVersion: v2
+    appVersion: 12.1.1-dev
+    created: "2022-10-04T10:05:05.487745223Z"
+    description: Teleport provides a secure SSH and Kubernetes remote access solution
+      that doesn't get in the way.
+    digest: a8246cf156ebe065a8eefea15cb36eac952cfcb05b14f72cd65f1e7a8d59a645
+    icon: https://goteleport.com/images/logos/logo-teleport-square.svg
+    keywords:
+    - Teleport
+    name: teleport-kube-agent
+    urls:
+    - https://github.com/mrandmrssmith/teleport/releases/download/teleport-kube-agent-12.1.1-dev/teleport-kube-agent-12.1.1-dev.tgz
+    version: 12.1.1-dev
+  - apiVersion: v2
     appVersion: 12.1.0-dev
     created: "2022-10-03T11:50:45.486387008Z"
     description: Teleport provides a secure SSH and Kubernetes remote access solution
@@ -457,4 +487,4 @@ entries:
     urls:
     - https://github.com/mrandmrssmith/teleport/releases/download/teleport-kube-agent-12.1.0-dev/teleport-kube-agent-12.1.0-dev.tgz
     version: 12.1.0-dev
-generated: "2022-10-03T11:50:45.486771337Z"
+generated: "2022-10-04T10:05:05.487985932Z"
